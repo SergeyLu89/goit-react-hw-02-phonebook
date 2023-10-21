@@ -18,7 +18,7 @@ export class App extends React.Component {
 
   onAddContactForm = userData => {
     const isExist = this.state.contacts.some(
-      contact => contact.name === userData.name
+      contact => contact.name.toLowerCase() === userData.name.toLowerCase()
     );
     if (isExist) {
       alert(`${userData.name} is already in contacts`);

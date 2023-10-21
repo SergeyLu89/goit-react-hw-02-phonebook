@@ -4,7 +4,6 @@ import css from './Filter.module.css';
 export class Filter extends React.Component {
   onInputChange = event => {
     const filterData = event.currentTarget.value;
-    console.log(filterData);
     this.props.onAddFilterChange(filterData);
   };
 

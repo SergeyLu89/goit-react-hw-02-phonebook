@@ -3,21 +3,19 @@ import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 
 export class ContactForm extends React.Component {
-  nameInputId = nanoid();
   onSubmitBtnClick = event => {
     event.preventDefault();
     const form = event.currentTarget;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
-    const id = form.elements.name.id;
 
     const userData = {
       name,
       number,
-      id,
+      id: nanoid(),
     };
     this.props.onAddContactForm(userData);
-    // console.log(userData);
+
     form.reset();
   };
   render() {
